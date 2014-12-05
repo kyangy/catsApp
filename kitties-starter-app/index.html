@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html ng-app>
+<html ng-app="catApp">
 	<head>
 		<meta charset="utf-8">
 
@@ -15,8 +15,13 @@
 		
 		<script src="js/angular.js"></script>
 		<script src="js/main.js"></script>
+		<script src="js/KittiesController.js"></script>
 	</head>
 
-	<body>
+	<body ng-controller="KittiesController as kittyControl">
+		<section id="container">
+			<div class="left-container">{{1+1}}</div>
+			<div class="right-container"></div>
+		</section>
 	</body>
 </html>

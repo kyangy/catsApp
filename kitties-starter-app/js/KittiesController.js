@@ -1,4 +1,9 @@
-[
+angular
+	.module('catApp')
+	.controller('KittiesController', KittiesControllerFunc);
+
+	function KittiesControllerFunc(){
+		this.kittiesList = [
 		{
 			catName: 'Karl',
 			monthsOld: 5,
@@ -29,3 +34,7 @@
 		}
 
 	]
+
+		
+	};
+
