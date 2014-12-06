@@ -1,20 +1,36 @@
 /*@import a Google Font here!*/
 
 body {
-
+	background: url('../images/background.png');	
+	font-family: Pacifico, sans-serif;
 }
 
 #container {
-
+	margin: 0 auto;
+	width: 75%;
+	text-align: center;
 }
 
 .dashed {
-
+	border: 1px dashed pink;
+	margin-bottom: 10px;
+	border-radius: 30px;
+	padding: 20px;
+	margin: 15px;
 }
 
 .left-container, .right-container {
-
+	display: inline-block;
+	background: white;
+	width: 420px;
+	height: 100%;
+	border: 1px solid #66CCFF;
+	border-radius: 30px;
+	vertical-align: top;
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
-h1 {
-	
+
+.left-container {
+	margin-right: 20px;
 }

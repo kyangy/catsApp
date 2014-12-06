@@ -12,16 +12,35 @@
 
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
+		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 		
 		<script src="js/angular.js"></script>
 		<script src="js/main.js"></script>
 		<script src="js/KittiesController.js"></script>
 	</head>
 
-	<body ng-controller="KittiesController as kittyControl">
+	<body ng-controller="KittiesController as main">
 		<section id="container">
-			<div class="left-container">{{1+1}}</div>
-			<div class="right-container"></div>
+			<div class="left-container">
+				<h2>Kitties for Adoption</h2>
+				<div class="dashed" ng-repeat="adoptMe in main.kittiesList | filter: {adopted: false}">
+					<h3>My name is {{adoptMe.catName}}</h3>
+					<h4>I am {{adoptMe.monthsOld}} months old</h4>
+					<h5>I am a {{adoptMe.gender}}.</h5>
+					<img ng-src="{{adoptMe.image}}">
+					<h6>Adopt?<input type="checkbox" ng-model="adoptMe.adopted"></h6>
+				</div>
+			</div>
+			<div class="right-container">
+				<h2>At their forever homes</h2>
+				<div class="dashed" ng-repeat="adoptMe in main.kittiesList | filter: {adopted: true}">
+					<h3>My name is {{adoptMe.catName}}</h3>
+					<h4>I am {{adoptMe.monthsOld}} months old</h4>
+					<h5>I am a {{adoptMe.gender}}.</h5>
+					<img ng-src="{{adoptMe.image}}">
+					<h6>Adopt?<input type="checkbox" ng-model="adoptMe.adopted"></h6>
+				</div>
+			</div>
 		</section>
 	</body>
 </html>

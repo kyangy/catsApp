@@ -3,6 +3,8 @@ angular
 	.controller('KittiesController', KittiesControllerFunc);
 
 	function KittiesControllerFunc(){
+		this.adoptTheseCats = adoptTheseCats;
+		this.cantHaveTheseCats = cantHaveTheseCats;
 		this.kittiesList = [
 		{
 			catName: 'Karl',
@@ -35,6 +37,13 @@ angular
 
 	]
 
-		
-	};
+function adoptTheseCats () {
+	return this.kittiesList.filter(function(x) {return x.adopted === false;})
+};
 
+function cantHaveTheseCats () {
+	return this.kittiesList.filter(function(x) {return x.adopted === true;})
+
+};
+
+}
